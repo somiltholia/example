@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,6 +11,8 @@
         android:id="@+id/loadbar"
         android:layout_width="407dp"
         android:layout_height="397dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="170dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,4 +22,4 @@
         app:lottie_loop="true"
         app:lottie_speed="1" />
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

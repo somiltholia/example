@@ -1,12 +1,15 @@
 package com.example.myapplication;
 
 import android.os.Bundle;
-import android.os.Handler;
-import android.support.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 public class MainActivity extends AppCompatActivity {
     Button emiCalcBtn;
     @Override
@@ -16,22 +19,23 @@ public class MainActivity extends AppCompatActivity {
         final EditText P = (EditText) findViewById(R.id.principal);
         final EditText I = (EditText) findViewById(R.id.interest);
         final EditText Y = (EditText) findViewById(R.id.years);
-        final EditText TI = (EditText) findViewById(R.id.interest_total);
-        final EditText result = (EditText) findViewById(R.id.emi);
+        final TextView TI = (TextView) findViewById(R.id.interest_total_tv);
+        final TextView result = (TextView) findViewById(R.id.emi_tv);
         emiCalcBtn = (Button) findViewById(R.id.btn_calculate2);
         emiCalcBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Runnable rnew = new Runnable() {
-                    @Override
-                    public void run() {
-                        setContentView(R.layout.loading);
-                    }
-                };
-                Handler han = new Handler();
-                han.postDelayed(rnew,2000);
+//                Runnable rnew = new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        setContentView(R.layout.loading);
+//                    }
+//                };
+//                Handler han = new Handler();
+//                han.postDelayed(rnew,4000);
 
+                setContentView(R.layout.activity_main3);
                 String st1 = P.getText().toString();
                 String st2 = I.getText().toString();
                 String st3 = Y.getText().toString();
@@ -62,7 +66,9 @@ public class MainActivity extends AppCompatActivity {
                 float emi = calEmi(FD, D);
                 float TA = calTa(emi, Months);
                 float ti = calTotalInt(TA, Principal);
+                Log.d("Line 68 mainactivity","Before result.settext");
                 result.setText(String.valueOf(emi));
+                Log.d("Line 68 mainactivity","After result.settext");
                 TI.setText(String.valueOf(ti));
             }
         });
