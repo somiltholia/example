@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/carbg"
+    tools:context=".MainActivity3">
+
+
+    <EditText
+        android:id="@+id/emi"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/roundedbg"
+        android:gravity="center"
+        android:hint="@string/hint_emi"
+        android:inputType="number"
+        android:maxEms="0"
+        app:layout_constraintBottom_toTopOf="@+id/interest_total"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/interest_total"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:background="@drawable/roundedbg"
+        android:hint="@string/hint_interest_total"
+        android:inputType="number"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="198dp" />
+
+</android.support.constraint.ConstraintLayout>
